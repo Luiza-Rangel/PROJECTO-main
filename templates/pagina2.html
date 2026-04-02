@@ -1,0 +1,41 @@
+{% extends "layout.html"%}
+
+{% block css_adicional %}
+<link rel="stylesheet" href="../static/styles/produto.css">
+{% endblock %}
+
+{% block conteudo %}
+
+<div class="produto">
+
+    <!-- IMAGEM -->
+    <div class="produto__imagem">
+        <img 
+            src="https://supermercadosrondon.com.br/guiadecarnes/images/postagens/quer_fazer_hamburger_artesanal_perfeito_2019-05-14.jpg" 
+            alt="Hambúrguer artesanal"
+        >
+    </div>
+
+    <!-- INFORMAÇÕES -->
+    <div class="produto__info">
+
+        <!-- 🔥 TÍTULO ALTERADO -->
+        <h1>Hambúrguer Artesanal</h1>
+
+        <p class="produto__codigo">SKU: 1003938</p>
+
+        <p class="produto__descricao">
+            Delicioso hambúrguer artesanal, suculento e preparado com ingredientes frescos.
+        </p>
+
+        <p class="produto__preco-antigo">R$ 129,99</p>
+
+        <p class="produto__preco">R$ 119,99</p>
+
+        <button class="produto__botao">Comprar</button>
+
+    </div>
+
+</div>
+
+{% endblock %}

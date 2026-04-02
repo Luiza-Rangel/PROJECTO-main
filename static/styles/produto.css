@@ -1,0 +1,65 @@
+/* =========================
+   CONTAINER PRINCIPAL
+   ========================= */
+.produto {
+    display: flex; /* lado a lado */
+    gap: 40px; /* espaço entre imagem e texto */
+    padding: 40px;
+}
+
+/* =========================
+   IMAGEM
+   ========================= */
+.produto__imagem img {
+    width: 300px;
+    height: auto; /* evita deformar */
+}
+
+/* =========================
+   INFORMAÇÕES
+   ========================= */
+.produto__info {
+    max-width: 400px;
+}
+
+/* TÍTULO */
+.produto__info h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* SKU */
+.produto__codigo {
+    font-size: 12px;
+    color: gray;
+    margin-bottom: 10px;
+}
+
+/* DESCRIÇÃO */
+.produto__descricao {
+    margin-bottom: 20px;
+}
+
+/* PREÇO ANTIGO */
+.produto__preco-antigo {
+    text-decoration: line-through;
+    color: gray;
+}
+
+/* PREÇO ATUAL */
+.produto__preco {
+    font-size: 24px;
+    font-weight: bold;
+    color: #8B0000;
+    margin-bottom: 20px;
+}
+
+/* BOTÃO */
+.produto__botao {
+    background-color: #8B0000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
