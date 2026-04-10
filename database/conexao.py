@@ -12,3 +12,15 @@ def conectar():
         
         cursor = mydb.cursor(dictionary=True)
         return mydb, cursor
+
+
+def rec_destq():
+        conexao, cursor = conectar()
+        cursor.execute("""
+                        SELECT destaque, url_imagem from itens
+""")
+        
+        resultado = cursor.fetchall()
+        conexao.close()
+        return resultado
+

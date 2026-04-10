@@ -12,4 +12,6 @@ def segunda_pag():
     itens = select()
     return render_template("pagina2.html", itens=itens)
 
+
+
 app.run(debug=True)
