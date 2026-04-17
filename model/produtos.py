@@ -1,9 +1,23 @@
 from database.conexao import conectar
 
-def select():
+def mostrar_comidas():
     conexao, cursor = conectar()
-    cursor.execute('select * from produtos')
-    itens = cursor.fetchall()
-    conexao.close()
-    return itens
 
+    #executado consulta genero
+    cursor.execute("SELECT codigo, produto, descricao, destaque, valor, imagem FROM itens;")
+
+    #recuperando os dados do genero
+    item = cursor.fetchall()
+
+    #Fechando
+    conexao.close()
+
+    return item
+
+def rec_destaque():
+    conexao, cursor = conectar()
+    cursor.execute("""
+                    SELECT codigo, produto, descricao, destaque, valor, imagem WHERE destaque =1; """)
+    destaque = cursor.fetchall()
+    conexao.close()
+    return destaque
