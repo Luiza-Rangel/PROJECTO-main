@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger Master | Login e Cadastro</title>
+    <style>
+        :root {
+            --primary-color: #e67e22; /* Laranja queimado/Cheddar */
+            --secondary-color: #2c3e50; /* Cinza escuro/Chapa */
+            --accent-color: #f1c40f; /* Amarelo Mostarda */
+            --text-light: #ecf0f1;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1550547660-d9450f859349?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box; /* Garante que o padding não aumente a largura */
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--primary-color);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #d35400;
+        }
+
+        .toggle-link {
+            margin-top: 20px;
+            display: block;
+            color: #7f8c8d;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .toggle-link b {
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        /* Classe para esconder formulários */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="logo">BURGER <span>MASTER</span></div>
+
+    <div id="login-form">
+        <h2>Bem-vindo de volta!</h2>
+        <form action="#">
+            <div class="form-group">
+                <label for="login-user">Usuário</label>
+                <input type="text" id="login-user" placeholder="Seu usuário" required>
+            </div>
+            <div class="form-group">
+                <label for="login-pass">Senha</label>
+                <input type="password" id="login-pass" placeholder="Sua senha" required>
+            </div>
+            <button type="submit">MATAR A FOME</button>
+        </form>
+        <a href="#" class="toggle-link" onclick="toggleForm()">Não tem conta? <b>Cadastre-se aqui</b></a>
+    </div>
+
+    <div id="register-form" class="hidden">
+        <h2>Crie sua conta</h2>
+        <form action="#">
+            <div class="form-group">
+                <label for="reg-name">Nome Completo</label>
+                <input type="text" id="reg-name" placeholder="Como te chamamos?" required>
+            </div>
+            <div class="form-group">
+                <label for="reg-user">Usuário</label>
+                <input type="text" id="reg-user" placeholder="Escolha um @usuário" required>
+            </div>
+            <div class="form-group">
+                <label for="reg-pass">Senha</label>
+                <input type="password" id="reg-pass" placeholder="Crie uma senha forte" required>
+            </div>
+            <button type="submit">FAZER PARTE DO CLUBE</button>
+        </form>
+        <a href="#" class="toggle-link" onclick="toggleForm()">Já é de casa? <b>Faça login</b></a>
+    </div>
+</div>
+
+<script>
+    // Função simples para alternar entre Login e Cadastro
+    function toggleForm() {
+        const loginForm = document.getElementById('login-form');
+        const registerForm = document.getElementById('register-form');
+        
+        loginForm.classList.toggle('hidden');
+        registerForm.classList.toggle('hidden');
+    }
+</script>
+
+</body>
+</html>
