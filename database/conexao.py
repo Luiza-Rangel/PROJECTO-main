@@ -17,7 +17,7 @@ def conectar():
 def rec_destq():
         conexao, cursor = conectar()
         cursor.execute("""
-                        SELECT destaque, url_imagem from itens
+                        SELECT destaque, url_imagem from produtos
 """)
         
         resultado = cursor.fetchall()

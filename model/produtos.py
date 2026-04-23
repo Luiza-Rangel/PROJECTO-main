@@ -4,7 +4,7 @@ def mostrar_comidas():
     conexao, cursor = conectar()
 
     #executado consulta genero
-    cursor.execute("SELECT codigo, produto, descricao, destaque, valor, imagem FROM itens;")
+    cursor.execute("SELECT codigo, produto, descricao, destaque, preco, foto FROM produtos;")
 
     #recuperando os dados do genero
     item = cursor.fetchall()
@@ -17,7 +17,7 @@ def mostrar_comidas():
 def rec_destaque():
     conexao, cursor = conectar()
     cursor.execute("""
-                    SELECT codigo, produto, descricao, destaque, valor, imagem WHERE destaque =1; """)
+                    SELECT codigo, produto, descricao, destaque, preco, foto WHERE destaque =1; """)
     destaque = cursor.fetchall()
     conexao.close()
     return destaque
